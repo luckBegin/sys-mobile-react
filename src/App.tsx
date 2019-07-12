@@ -5,20 +5,22 @@ import './App.css';
 class App extends React.Component {
 	constructor(props: any) {
 		super(props);
-		this.state = {name: 'a' };
+		this.state = {name: 'a'};
 	};
 
 	state: any;
 
 	private change = ($event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void => {
+		$event.currentTarget.disabled = false ;
 		this.setState((state: any, props) => {
-			const name = state.name ;
-			return {name: name === 'a' ? 'b': 'a' };
+			const name = state.name;
+			return {name: name === 'a' ? 'b' : 'a'};
 		});
 	};
+
 	public render(): React.ReactElement<any> {
-		const name = this.state.name ;
-		if( name === 'a') {
+		const name = this.state.name;
+		if (name === 'a') {
 			return (
 				<div className="App">
 					<button onClick={e => this.change(e)}>12</button>
@@ -42,7 +44,7 @@ class App extends React.Component {
 			return (
 				<div>
 					<button onClick={e => this.change(e)}>12</button>
-					<h1>{ this.state.name }</h1>
+					<h1>{this.state.name}</h1>
 				</div>
 			);
 		}
