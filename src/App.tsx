@@ -16,7 +16,6 @@ class App extends React.Component {
 			return {name: name === 'a' ? 'b': 'a' };
 		});
 	};
-
 	public render(): React.ReactElement<any> {
 		const name = this.state.name ;
 		if( name === 'a') {
