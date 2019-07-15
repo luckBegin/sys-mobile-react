@@ -4,6 +4,7 @@ import router from './router'
 import {RawLocation, Route} from "vue-router";
 import {SesssionStorageService} from "@/service/storage";
 import './assets/css/style.css' ;
+import ElementUI from 'element-ui';
 
 Vue.config.productionTip = false;
 
@@ -34,6 +35,7 @@ router.beforeEach((
 	}
 });
 
+Vue.use( ElementUI );
 new Vue({
 	router,
 	render: h => h(App)

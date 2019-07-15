@@ -11,7 +11,7 @@
 	})
 	export default class PerLogin extends Vue {
 		private created(): void{
-			console.log( window.location.href ) ;
+			console.log( window.location.href )
 		}
 	}
 </script>
