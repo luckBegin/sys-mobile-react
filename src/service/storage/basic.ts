@@ -1,7 +1,7 @@
 export class StorageClass {
 	constructor(storageObj: Storage) {
 		this.storage = storageObj;
-	};
+	}
 	
 	storage: Storage;
 	
@@ -21,14 +21,14 @@ export class StorageClass {
 	get(key: string): any {
 		const value = this.storage.getItem(key);
 		try {
-			return JSON.parse( value as string );
+			return JSON.parse(value as string);
 		} catch (e) {
 			return value
 		}
 	};
 	
 	clear(): StorageClass {
-		this.storage.clear() ;
+		this.storage.clear();
 		return this;
 	};
 	

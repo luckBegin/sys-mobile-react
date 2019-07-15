@@ -1,9 +1,9 @@
-import { StorageClass } from './basic' ;
+import {StorageClass} from './basic' ;
 
-class SessionStorageServiceClass extends StorageClass{
-    constructor(){
-        super(window.sessionStorage) ;
-    };
+class SessionStorageServiceClass extends StorageClass {
+	constructor() {
+		super(window.sessionStorage);
+	}
 }
 
-export const SesssionStorageService = new SessionStorageServiceClass ;
+export const SessionStorageService = new SessionStorageServiceClass();

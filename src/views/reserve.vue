@@ -7,9 +7,9 @@
 </style>
 <script lang="ts">
 	import {Component, Vue} from 'vue-property-decorator';
+
 	@Component({
-		components: {
-		},
+		components: {},
 	})
 	export default class Reserve extends Vue {
 
