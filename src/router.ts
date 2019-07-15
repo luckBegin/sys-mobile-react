@@ -1,21 +1,19 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import Home from './views/Home.vue';
+import Vue from 'vue'
+import Router from 'vue-router' ;
+
 Vue.use(Router);
-const router =  new Router({
+export default new Router({
 	mode: 'history',
 	base: '/mobile',
 	routes: [
 		{
-			path: '/',
-			name: 'home',
-			component: Home,
-		},
-		{
-			path: '/reserve',
-			name: 'reserve',
-			component: () => import(/* webpackChunkName: "about" */ './views/reserve.vue'),
-		},
-	],
-});
-export default router ;
+		  path: '/error',
+		  name: 'error',
+		  component: () => import(/* webpackChunkName: "about" */ './views//error/error.vue')
+		},{
+			path: '/preLogin',
+			name: 'preLogin',
+			component: () => import(/* webpackChunkName: "about" */ './views//preLogin/preLogin.vue')
+		}
+	]
+})

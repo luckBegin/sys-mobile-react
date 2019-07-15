@@ -1,7 +1,7 @@
 export class StorageClass {
 	constructor(storageObj: Storage) {
 		this.storage = storageObj;
-	}
+	};
 	
 	storage: Storage;
 	
@@ -11,15 +11,15 @@ export class StorageClass {
 	
 	set(key: string, value: Array<any> | Object | number | string | boolean): StorageClass {
 		if (this.typeCheck("String", value)) {
-			this.storage.setItem(key, value as string);
+			this.storage.setItem( key , value as string ) ;
 		} else {
-			this.storage.setItem(key, JSON.stringify(value));
+			this.storage.setItem( key ,  JSON.stringify(value) ) ;
 		}
 		return this;
 	};
 	
 	get(key: string): any {
-		const value = this.storage.getItem(key);
+		const value = this.storage.getItem( key );
 		try {
 			return JSON.parse(value as string);
 		} catch (e) {
@@ -28,13 +28,13 @@ export class StorageClass {
 	};
 	
 	clear(): StorageClass {
-		this.storage.clear();
+		this.storage.clear() ;
 		return this;
 	};
 	
-	remove(list: Array<string>): StorageClass {
-		for (let key in list) {
-			this.storage.removeItem(list[key]);
+	remove(list: Array< string >): StorageClass {
+		for (var key in list) {
+			this.storage.removeItem( list[key] );
 		}
 		return this;
 	};
