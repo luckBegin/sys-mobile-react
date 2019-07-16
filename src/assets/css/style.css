@@ -7,9 +7,11 @@
 .c-full-container {
     width: 100%;
     height: 100%;
-    background: rgb(245, 245, 249);
 }
 
+.c-container-bg{
+    background: rgb(245, 245, 249);
+}
 .c-img-res {
     display: block;
     width: 100%;
@@ -292,4 +294,10 @@
 
 .c-text-center {
     text-align: center;
+}
+.el-time-panel{
+    left: -30px !important;
+}
+.el-message{
+    min-width: 280px !important;
 }

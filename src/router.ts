@@ -9,11 +9,11 @@ export default new Router({
 		{
 		  path: '/error',
 		  name: 'error',
-		  component: () => import(/* webpackChunkName: "about" */ './views//error/error.vue')
+		  component: () => import(/* webpackChunkName: "about" */ './views/error/error.vue')
 		},{
-			path: '/preLogin',
-			name: 'preLogin',
-			component: () => import(/* webpackChunkName: "about" */ './views//preLogin/preLogin.vue')
+			path: '/reverse',
+			name: 'reverse',
+			component: () => import(/* webpackChunkName: "about" */ './views/reverse/reverse.vue')
 		}
 	]
 })
