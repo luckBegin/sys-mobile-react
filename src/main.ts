@@ -10,7 +10,7 @@ import ElementUI from 'element-ui';
 import Header from './components/header.vue' ;
 
 Vue.config.productionTip = false;
-const ignoreUrls = ['/error' , '/reverse'];
+const ignoreUrls = ['/error' , '/preLogin'];
 router.beforeEach((
 	to: Route,
 	from: Route,
