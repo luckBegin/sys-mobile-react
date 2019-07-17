@@ -1,4 +1,4 @@
-const host: string = 'http://192.168.191.1:3002' ;
+const host: string = 'http://api.jpgqs.cn' ;
 export const API = {
 	shop: {
 		list: host + '/system/shop'
