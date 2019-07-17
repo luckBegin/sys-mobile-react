@@ -24,7 +24,8 @@
 
 		private created(): void{
 			this.code = this.$route.query.code as string;
-
+			if( this.code === '401')
+				this.desc = '用户未登录' ;
 			if( this.code === '403')
 				this.desc = '暂无权限访问,请联系系统管理员' ;
 		}

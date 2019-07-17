@@ -9,5 +9,10 @@ export const API = {
 	},
 	wx: {
 		config: host + '/wechat/getWxConfig'
+	},
+	user:{
+		staff:{
+			info: host + '/system/staff/byUid'
+		}
 	}
 };

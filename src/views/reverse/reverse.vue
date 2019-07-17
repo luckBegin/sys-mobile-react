@@ -53,6 +53,7 @@
 	import {FormBuilder, FormGroupI} from "@/service/form/formBuilder.service";
 	import {Validators} from "@/service/form/validators";
 	import {RoomService} from "@/service/room/room.service";
+	import {SesssionStorageService} from "@/service/storage";
 
 	@Component({
 		components: {
@@ -77,12 +78,9 @@
 		});
 
 		private getShops(): void {
-			ShopService.shops()
-				.pipe( map( ( res: RESPONSE ) => res.data))
-				.subscribe( (data: any) => {
-					this.ENUM_Shops = AdaptorUtils.reflect( data , { id: 'value' , name: 'key'});
-					this.form.patchVal({ shopId: this.ENUM_Shops[0].value })
-				});
+			const data = SesssionStorageService.get('userInfo').shopInfo;
+			this.ENUM_Shops = AdaptorUtils.reflect( data , { id: 'value' , name: 'key'});
+			this.form.patchVal({ shopId: this.ENUM_Shops[0].value })
 		}
 
 		private getTypes(): void {

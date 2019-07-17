@@ -16,8 +16,8 @@ router.beforeEach((
 	from: Route,
 	next: () => void
 ): void => {
-	const loginInfo = SesssionStorageService.get('loginInfo');
-
+	const loginInfo = SesssionStorageService.get('userInfo');
+	
 	if (!!~ignoreUrls.indexOf(to.path)) {
 		next();
 		return ;
@@ -30,7 +30,7 @@ router.beforeEach((
 		router.push({
 			path: '/error' ,
 			query: {
-				code: '403'
+				code: '401'
 			}
 		}) ;
 	}
