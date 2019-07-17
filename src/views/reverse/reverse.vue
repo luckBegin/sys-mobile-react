@@ -23,8 +23,8 @@
 					<el-input type="tel" v-model="form.data.tel" placeholder="请输入客户电话"></el-input>
 				</el-form-item>
 
-				<el-form-item label="到店时间" prop="time" class="form-item">
-					<el-date-picker type="datetime" placeholder="选择到店时间" v-model="form.data.time" style="width: 100%;"></el-date-picker>
+				<el-form-item label="到店时间" prop="arriveTime" class="form-item">
+					<el-date-picker type="datetime" placeholder="选择到店时间" v-model="form.data.arriveTime" style="width: 100%;"></el-date-picker>
 				</el-form-item>
 
 				<el-form-item label="客户人数" prop="count" class="form-item">
@@ -60,8 +60,6 @@
 	})
 	export default class PerLogin extends Vue {
 		private created(): void{
-			const code: string = this.$route.query.code as string ;
-			const menuName: string = this.$route.query.name as string ;
 			this.getShops() ;
 			this.getTypes() ;
 		}
@@ -71,7 +69,7 @@
 		form: FormGroupI = FormBuilder.group({
 			shopId: [ null , [ Validators.required ]] ,
 			name: [ null , [ Validators.required ]] ,
-			time: [ null , [ Validators.required ]] ,
+			arriveTime: [ null , [ Validators.required ]] ,
 			tel: [ null , [Validators.required ]] ,
 			typeId: [ null , [Validators.required ]] ,
 			count: [ null ] ,

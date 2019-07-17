@@ -14,6 +14,10 @@ export default new Router({
 			path: '/reverse',
 			name: 'reverse',
 			component: () => import(/* webpackChunkName: "about" */ './views/reverse/reverse.vue')
+		},{
+			path: '/preLogin',
+			name: 'preLogin',
+			component: () => import(/* webpackChunkName: "about" */ './views/preLogin/preLogin.vue')
 		}
 	]
 })
