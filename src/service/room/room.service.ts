@@ -10,7 +10,10 @@ class RoomServiceClass {
 	@GET(API.room.type + '/all')
 	public types(): Observable<RESPONSE> | any {} ;
 	
-	@POST(API.room.reverse)
+	@POST(API.room.reserve)
 	public makeReserve( data?: any): Observable< RESPONSE> | any {};
+	
+	@GET(API.room.reserve + '/all')
+	public reserveList( data?: any): Observable< RESPONSE> | any {};
 }
 export const RoomService = new RoomServiceClass() ;

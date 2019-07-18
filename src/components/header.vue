@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<i class="el-icon-arrow-left iconBack" v-if="navigateBack === 'true' " @click="back"></i>
+		<i class="el-icon-arrow-left iconBack" v-if="navigateBack === 'true' || navigateBack === 'eventEmit'" @click="back"></i>
 		{{ title }}
 	</div>
 </template>
@@ -11,10 +11,13 @@
 	@Component
 	export default class Header extends Vue {
 		@Prop() private title!: string;
-		@Prop() private navigateBack!: boolean ;
+		@Prop() private navigateBack!: boolean | 'eventEmit' ;
 
 		private back(): void {
-			this.$router.back() ;
+			if( this.navigateBack === 'eventEmit')
+				this.$emit('back') ;
+			else
+				this.$router.back() ;
 		}
 	}
 

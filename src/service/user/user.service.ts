@@ -8,7 +8,6 @@ import {SesssionStorageService} from "@/service/storage";
 const recursive = function( parent: any[] , arr: string[] ) : void{
 	parent.forEach( item => {
 		arr.push( item.path ) ;
-		
 		if( item.children.length > 0) {
 			recursive( item.children , arr ) ;
 		}
@@ -16,7 +15,6 @@ const recursive = function( parent: any[] , arr: string[] ) : void{
 };
 class UserServiceClass {
 	constructor(){
-		console.log( 'ShopServiceClass init ' );
 	}
 	private readonly http = HttpClient;
 	
@@ -24,14 +22,19 @@ class UserServiceClass {
 	public staffInfo( para: {uid: number}): Observable<RESPONSE> | any {
 	}
 	
-	private permissionPath: string[] = [] ;
+	private permissionPath: string[] | undefined ;
 	public permission(path:string): boolean {
-		const data = SesssionStorageService.get('userInfo').menuInfo[2];
-		const arr:string[] =[] ;
-		recursive( data.children , arr ) ;
-		this.permissionPath = arr ;
-		console.log( arr ) ;
-		return true ;
+		if( this.permissionPath ) {
+			return !!~this.permissionPath.indexOf( path ) ;
+		} else {
+			const data = SesssionStorageService.get('userInfo').menuInfo[2];
+			const arr:string[] =[] ;
+			recursive( data.children , arr ) ;
+			this.permissionPath = arr ;
+			return !!~this.permissionPath.indexOf( path ) ;
+		}
 	}
+	
+	
 }
 export const UserService = new UserServiceClass() ;
