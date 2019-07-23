@@ -2,11 +2,7 @@
 	<div class="c-full-container c-container-blue">
 		<div class="tab-content">
 			<div v-show = 'tabName === "home" '>
-				<el-carousel height="150px">
-					<el-carousel-item v-for="item in 4" :key="item">
-						<h3 class="small">{{ item }}</h3>
-					</el-carousel-item>
-				</el-carousel>
+				<home-index></home-index>
 			</div>
 			<div v-show = 'tabName === "activity" '>
 				activity
@@ -57,32 +53,21 @@
 
 <script lang="ts">
 	import { Component, Vue } from 'vue-property-decorator';
-	import {ShopService} from "@/service/shop/shop.service";
-	import {RESPONSE} from "@/service/httpClient";
+
 	@Component({
 		components: {
 		},
 	})
 	export default class Home extends Vue {
-
 		tabPosition: string = 'bottom' ;
-
 		tabName: string = '';
-
+		galleryList: string[] = [] ;
 		private created(): void{
-			this.tabName = this.$route.query.tabName as string;
-			this.getGalleryAndShop() ;
+			this.tabName = this.$route.query.tabName as string ;
 		}
 
 		private tabSwitch( tabName: string ): void {
 			this.tabName = tabName ;
-		}
-
-		private getGalleryAndShop(): void {
-			ShopService.galleryAndShop()
-				.subscribe( ( res: RESPONSE ) => {
-					console.log( res );
-				})
 		}
 	}
 </script>
