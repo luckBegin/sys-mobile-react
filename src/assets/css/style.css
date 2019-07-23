@@ -12,6 +12,9 @@
 .c-container-bg{
     background: rgb(245, 245, 249);
 }
+.c-container-blue{
+    background: rgb(41, 48, 103);
+}
 .c-img-res {
     display: block;
     width: 100%;

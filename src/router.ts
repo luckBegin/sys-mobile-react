@@ -18,6 +18,10 @@ export default new Router({
 			path: '/preLogin',
 			name: 'preLogin',
 			component: () => import(/* webpackChunkName: "about" */ './views/preLogin/preLogin.vue')
+		},{
+			path: '/home',
+			name: 'home',
+			component: () => import(/* webpackChunkName: "about" */ './views/home/home.vue')
 		}
 	]
 })

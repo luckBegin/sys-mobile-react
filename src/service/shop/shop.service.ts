@@ -13,5 +13,9 @@ class ShopServiceClass {
 	@GET(API.shop.list)
 	public shops(): Observable<RESPONSE> | any {
 	}
+	
+	@GET(API.shop.galleryAndShop)
+	public galleryAndShop(): Observable<RESPONSE> | any {
+	}
 }
 export const ShopService = new ShopServiceClass() ;

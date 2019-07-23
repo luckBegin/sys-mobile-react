@@ -2,7 +2,8 @@
 const host: string = 'http://192.168.191.1:3002' ;
 export const API = {
 	shop: {
-		list: host + '/system/shop'
+		list: host + '/system/shop' ,
+		galleryAndShop: host + '/mobile/index'
 	},
 	room: {
 		type: host + '/room/type' ,
@@ -13,7 +14,8 @@ export const API = {
 	},
 	user:{
 		staff:{
-			info: host + '/system/staff/byUid'
-		}
+			info: host + '/system/staff/byUid' ,
+		} ,
+		wxLogin: host + '/wechat/userLogin'
 	}
 };

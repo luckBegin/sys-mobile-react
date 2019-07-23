@@ -14,7 +14,7 @@ import {UserService} from "@/service/user/user.service";
 import {DateUtils} from "@/utils/date.utils";
 
 Vue.config.productionTip = false;
-const ignoreUrls = ['/error' , '/preLogin'];
+const ignoreUrls = ['/error' , '/preLogin' , '/home'];
 router.beforeEach((
 	to: Route,
 	from: Route,

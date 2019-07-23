@@ -22,19 +22,26 @@ class UserServiceClass {
 	public staffInfo( para: {uid: number}): Observable<RESPONSE> | any {
 	}
 	
+	@GET(API.user.wxLogin)
+	public wxLogin( para: {uid: number}): Observable<RESPONSE> | any {
+	}
+	
 	private permissionPath: string[] | undefined ;
 	public permission(path:string): boolean {
 		if( this.permissionPath ) {
 			return !!~this.permissionPath.indexOf( path ) ;
 		} else {
-			const data = SesssionStorageService.get('userInfo').menuInfo[2];
+			const data = SesssionStorageService.get('userInfo') ;
 			const arr:string[] =[] ;
-			recursive( data.children , arr ) ;
+			
+			if( data.staffInfo ) {
+				const permission = data.menuInfo[2] ;
+				recursive( permission.children , arr ) ;
+			}
+			
 			this.permissionPath = arr ;
 			return !!~this.permissionPath.indexOf( path ) ;
 		}
 	}
-	
-	
 }
 export const UserService = new UserServiceClass() ;

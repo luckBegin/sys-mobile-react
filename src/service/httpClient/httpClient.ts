@@ -8,8 +8,9 @@ axios.interceptors.request.use(
 		const usrInfo = SesssionStorageService.get('userInfo') ;
 		
 		if( usrInfo ){
-			config.headers['jwt-user-id'] = usrInfo.userInfo.id ;
-			config.headers['jwt-shop'] = usrInfo.shopInfo[0].id;
+			config.headers['jwt-user-id'] = usrInfo.id ;
+			const shopid = usrInfo.shopIds.split(",") ;
+			config.headers['jwt-shop'] = shopid[0] ;
 		}
 		
 		return config

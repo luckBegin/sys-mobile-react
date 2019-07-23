@@ -38,7 +38,7 @@
 
 		private getUserInfo( uid: number ): void {
 			const menuName: string = this.$route.query.name as string ;
-			UserService.staffInfo({ uid })
+			UserService.wxLogin({ uid })
 				.pipe( map( (res:RESPONSE) => res.data ))
 				.subscribe( ( data: any) => {
 					SesssionStorageService.set('userInfo' , data ) ;
