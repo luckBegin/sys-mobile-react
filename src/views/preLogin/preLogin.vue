@@ -18,7 +18,6 @@
 	export default class PerLogin extends Vue {
 		private created(): void{
 			const code: string = this.$route.query.code as string ;
-
 			const wxConfig = SesssionStorageService.get('wxConfig') ;
 			if( wxConfig ) {
 
@@ -44,7 +43,6 @@
 					SesssionStorageService.set('userInfo' , data ) ;
 					this.$router.push( menuName ) ;
 				});
-
 		}
 	}
 </script>

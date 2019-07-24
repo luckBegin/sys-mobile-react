@@ -17,6 +17,7 @@ export const API = {
 			info: host + '/system/staff/byUid' ,
 		} ,
 		wxLogin: host + '/wechat/userLogin' ,
-		usrInfo: host + '/vip/user/userInfo'
+		usrInfo: host + '/vip/user/userInfo' ,
+		qrCode: host + '/vip/user/qrCode'
 	}
 };

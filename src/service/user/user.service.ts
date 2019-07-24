@@ -26,6 +26,7 @@ class UserServiceClass {
 	public wxLogin( para: {uid: number}): Observable<RESPONSE> | any {}
 	
 	private permissionPath: string[] | undefined ;
+	
 	public permission(path:string): boolean {
 		if( this.permissionPath ) {
 			return !!~this.permissionPath.indexOf( path ) ;
@@ -46,5 +47,8 @@ class UserServiceClass {
 	@GET(API.user.usrInfo)
 	public vipInfo( para: {uid: number}): Observable<RESPONSE> | any {
 	}
+	
+	@GET(API.user.qrCode )
+	public vipQrCode( ): Observable< RESPONSE > | any {} ;
 }
 export const UserService = new UserServiceClass() ;
