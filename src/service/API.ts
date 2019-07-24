@@ -16,6 +16,7 @@ export const API = {
 		staff:{
 			info: host + '/system/staff/byUid' ,
 		} ,
-		wxLogin: host + '/wechat/userLogin'
+		wxLogin: host + '/wechat/userLogin' ,
+		usrInfo: host + '/vip/user/userInfo'
 	}
 };

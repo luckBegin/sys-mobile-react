@@ -13,6 +13,7 @@ import SliderPage from './components/slider-page.vue' ;
 import {UserService} from "@/service/user/user.service";
 import {DateUtils} from "@/utils/date.utils";
 import HomeIndex from "@/components/home/index.vue";
+import VipInfo from "@/components/home/vip.vue";
 
 Vue.config.productionTip = false;
 const ignoreUrls = ['/error' , '/preLogin' , '/home'];
@@ -27,7 +28,6 @@ router.beforeEach((
 	}
 	
 	const loginInfo = SesssionStorageService.get('userInfo');
-	
 	if( !loginInfo ) {
 		router.push({
 			path: '/error' ,
@@ -47,7 +47,6 @@ router.beforeEach((
 			}
 		}) ;
 		return ;
-	
 	}
 	next();
 });
@@ -55,6 +54,7 @@ router.beforeEach((
 Vue.component('common-header' , Header) ;
 Vue.component('slider-page' , SliderPage) ;
 Vue.component('home-index' , HomeIndex) ;
+Vue.component('home-vip' , VipInfo) ;
 
 Vue.filter('dateFilter' , ( val: string , format: string ='y-m-d'  ) => {
 	return val ? DateUtils.format( val , format ) : '无' ;

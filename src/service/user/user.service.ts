@@ -23,8 +23,7 @@ class UserServiceClass {
 	}
 	
 	@GET(API.user.wxLogin)
-	public wxLogin( para: {uid: number}): Observable<RESPONSE> | any {
-	}
+	public wxLogin( para: {uid: number}): Observable<RESPONSE> | any {}
 	
 	private permissionPath: string[] | undefined ;
 	public permission(path:string): boolean {
@@ -42,6 +41,10 @@ class UserServiceClass {
 			this.permissionPath = arr ;
 			return !!~this.permissionPath.indexOf( path ) ;
 		}
+	}
+	
+	@GET(API.user.usrInfo)
+	public vipInfo( para: {uid: number}): Observable<RESPONSE> | any {
 	}
 }
 export const UserService = new UserServiceClass() ;

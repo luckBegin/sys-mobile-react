@@ -5,15 +5,14 @@ declare var axios: any ;
 
 axios.interceptors.request.use(
 	(config:any) => {
-		const usrInfo = SesssionStorageService.get('userInfo') ;
+		const data = SesssionStorageService.get('userInfo') ;
 		
-		if( usrInfo ){
-			config.headers['jwt-user-id'] = usrInfo.id ;
-			const shopid = usrInfo.shopIds.split(",") ;
-			config.headers['jwt-shop'] = shopid[0] ;
+		if( data ){
+			config.headers['jwt-user-id'] = data.vipInfo.id ;
+			const shopId = data.vipInfo.shopIds.split(",") ;
+			config.headers['jwt-shop'] = shopId[0] ;
 		}
-		
-		return config
+		return config;
 	}
 );
 

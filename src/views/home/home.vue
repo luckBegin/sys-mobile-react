@@ -14,7 +14,7 @@
 				order
 			</div>
 			<div v-show = 'tabName === "mine" '>
-				mine
+				<home-vip></home-vip>
 			</div>
 		</div>
 		<div class="c-flex-row-start tab-menu">
