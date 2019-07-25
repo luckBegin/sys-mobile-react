@@ -95,7 +95,7 @@
 		margin-bottom: 5px;
 	}
 	.tab-active{
-		color: #b15353 !important;
+		color:rgb(210, 0, 80) !important;
 	}
 	.tab-content>div{
 		height: 100%;
