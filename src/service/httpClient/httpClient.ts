@@ -12,6 +12,10 @@ axios.interceptors.request.use(
 			config.headers['jwt-user-id'] = data.vipInfo.id;
 			const shopId = data.vipInfo.shopIds.split(",");
 			config.headers['jwt-shop'] = shopId[0];
+			
+			if( data.userInfo ) {
+				config.headers['jwt-staff-id'] = data.userInfo.id ;
+			}
 		}
 		return config;
 	}

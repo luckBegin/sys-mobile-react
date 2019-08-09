@@ -57,7 +57,7 @@
 					<div style="padding: 10px 0">
 						<div class="reserve-item">
 							<span>人数:</span>
-							<span>{{ item.count }}</span>
+							<span>{{ item.count | nullFilter }}</span>
 						</div>
 						<div class="reserve-item">
 							<span>类型:</span>

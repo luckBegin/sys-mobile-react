@@ -60,7 +60,7 @@ Vue.filter('dateFilter' , ( val: string , format: string ='y-m-d'  ) => {
 	return val ? DateUtils.format( val , format ) : '无' ;
 });
 Vue.filter('nullFilter' , ( val: string , format: string ='y-m-d'  ) => {
-	return val ? val : '无' ;
+	return val ? val : '未填写' ;
 });
 
 

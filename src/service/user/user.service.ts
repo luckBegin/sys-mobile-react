@@ -34,11 +34,10 @@ class UserServiceClass {
 			const data = SesssionStorageService.get('userInfo') ;
 			const arr:string[] =[] ;
 			
-			if( data.staffInfo ) {
+			if( data.menuInfo ) {
 				const permission = data.menuInfo[2] ;
 				recursive( permission.children , arr ) ;
 			}
-			
 			this.permissionPath = arr ;
 			return !!~this.permissionPath.indexOf( path ) ;
 		}
